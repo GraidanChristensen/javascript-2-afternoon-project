@@ -28,7 +28,9 @@
 */
 
 // Code Here 
-
+function first(arr, funct){
+  funct(arr[0]);
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -48,7 +50,9 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last(arr, cbf){
+  cbf(arr[arr.length - 1]);
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply(x, y, cbf){
+  cbf(x * y);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -85,7 +91,12 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-
+function contains(arr, name, cbf){
+  if (arr.includes(name)){
+    cbf(true);
+  }
+  else{cbf(false)};
+}
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -105,8 +116,17 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-//Code Here
 
+//Code Here
+function uniq(arr, cbf){
+  let testArray = arr;
+  // splice first of testArray
+  // check if test array includes arr[0]
+  //
+  for(let i = 0; i < arr.length; i++){
+
+  }
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -114,6 +134,9 @@ uniq(names, function(uniqArr){
 // Do not edit the code above.
 
 
+
+//  3, 5
+// 1, 4, 2, 3, 5
 
 ////////// PROBLEM 6 //////////
 
@@ -123,6 +146,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+function each(arr, cbf){
+  for(let i = 0; i < arr.length; i++){
+    cbf(arr[i], i);
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,7 +168,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(users, idNum, cbf){
+  for(let i = 0; i < users.length; i++){
+    if(users[i].id === idNum){
+      cbf(users[i]);
+    }
+  }
+}
 // Do not edit the code below.
 var users = [
   {
