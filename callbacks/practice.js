@@ -119,14 +119,15 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 function uniq(arr, cbf){
-  let testArray = arr;
-  // splice first of testArray
-  // check if test array includes arr[0]
-  //
+  let newArr = [];
   for(let i = 0; i < arr.length; i++){
-
+    if(!newArr.includes(arr[i])){
+      newArr.push(arr[i]);
+    }
   }
+  cbf(newArr);
 }
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -135,8 +136,6 @@ uniq(names, function(uniqArr){
 
 
 
-//  3, 5
-// 1, 4, 2, 3, 5
 
 ////////// PROBLEM 6 //////////
 
